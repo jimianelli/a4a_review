@@ -43,9 +43,11 @@ In the shketest figure below you can see the 2nd vpar parameter settled on the b
 
 Another route would be to put a reasonable penalty on these types of parameters until the last phase (which might be one more than the maximum phase).
 
-Haven't thought much more about "optimum" phasing here but it did strike me as odd to have the vpar in the 1st phase, seems having a base "ballpark" sigma of say 0.2 to start out would be reasonable, then estimate the values based on the data in later phases (easy to implement).
+More work and thought is needed on setting "optimum" phasing. However, we note that it seems odd to have the vpar 
+in the 1st phase, seems having a base "ballpark" sigma of say 0.2 to start out would be reasonable, then estimate
+the values based on the data in later phases. This would be easy to implement.
 
-Anyway, all for today. I put the test directories in the inst/admb folder of the admb_dev branch (need to delete later; just put them for examining). The kludgy steps I followed to run a test example were:
+Test directories were constructied in the inst/admb folder of the admb_dev branch (need to delete later; just put them for examining). The kludgy steps I followed to run a test example were:
 
 1. navigate to the FLa4a/inst/admb directory in a terminal
 2. compile a4a.tpl: ```admb a4a```
@@ -53,6 +55,11 @@ Anyway, all for today. I put the test directories in the inst/admb folder of the
 4. navigate to shketest ```cd shketest```
 5. run the model ```a4a -nox``` (-nox option distills what's most essential in checking convergence progress, imho).
 
+# API development
+The current code has limited modularity (i.e., separate functions). This makes the code harder to read and 
+limits the extent that documentation can be easily developed. **We recommend** that a utility like doxygen be 
+adopted for code documentation purposes. As part of this contractual obligation, we provide a prototype that 
+breaks the current model into functional code segments that are documented and compiled for easy viewing.
 
 
 
